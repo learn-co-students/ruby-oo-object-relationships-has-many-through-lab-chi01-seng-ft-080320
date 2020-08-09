@@ -16,10 +16,14 @@ belong to a genre. A genre has many songs and an artist has many songs. An
 artist has many genres through its songs and a genre has many artists through
 its songs.
 
+ Artist -< Song >- Genre 
+
 We also have an `Appointment`, `Doctor` and `Patient` class. `Appointment`s
 belong to a `Patient` and a `Doctor`. A `Doctor` has many `Appointment`s and a
 `Patient` has many `Appointment`s. A `Doctor` has many `Patient`s through its
 `Appointment`s and a `Patient` has many `Doctor`s through its `Appointment`s.
+
+Patient -< Appointments >- Doctor
 
 ## Instructions
 
