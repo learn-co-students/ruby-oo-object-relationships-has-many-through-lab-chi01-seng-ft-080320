@@ -23,21 +23,48 @@ describe "Appointment" do
     end
   end
 
-  describe "#patient" do
-    it "belongs to a patient" do
-      doctor_who = Doctor.new("The Doctor")
-      hevydevy = Patient.new("Devin Townsend")
-      appointment = doctor_who.new_appointment(hevydevy, "Friday, January 32nd")
-      expect(appointment.patient).to eq(hevydevy)
-    end
-  end
+  # describe "#patient" do
+  #   it "belongs to a patient" do
+  #     doctor_who = Doctor.new("The Doctor")
+  #     hevydevy = Patient.new("Devin Townsend")
+    #PASSES IN PATIENT THEN DATE FOR APPOINTMENT WHEN OTHER TESTS PASS IN DATE AS FIRST PARAMETER
 
-  describe "#doctor" do
-    it "belongs to a doctor" do
-      doctor_who = Doctor.new("The Doctor")
-      hevydevy = Patient.new("Devin Townsend")
-      appointment = doctor_who.new_appointment(hevydevy, "Friday, January 32nd")
-      expect(appointment.doctor).to eq(doctor_who)
-    end
+
+  #     appointment = doctor_who.new_appointment(hevydevy, "Friday, January 32nd")
+  #     expect(appointment.patient).to eq(hevydevy)
+  #   end
+  # end
+
+  # describe "#doctor" do
+  #   it "belongs to a doctor" do
+  #     doctor_who = Doctor.new("The Doctor")
+  #     hevydevy = Patient.new("Devin Townsend")
+  #     appointment = doctor_who.new_appointment(hevydevy, "Friday, January 32nd")
+  #     expect(appointment.doctor).to eq(doctor_who)
+  #   end
+  # end
+
+
+
+  describe "#patient" do
+  it "belongs to a patient" do
+    doctor_who = Doctor.new("The Doctor")
+    hevydevy = Patient.new("Devin Townsend")
+    appointment = doctor_who.new_appointment("Friday, January 32nd",hevydevy)
+    expect(appointment.patient).to eq(hevydevy)
   end
+end
+
+describe "#doctor" do
+  it "belongs to a doctor" do
+    doctor_who = Doctor.new("The Doctor")
+    hevydevy = Patient.new("Devin Townsend")
+    appointment = doctor_who.new_appointment("Friday, January 32nd", hevydevy)
+    expect(appointment.doctor).to eq(doctor_who)
+  end
+end
+
+
+
+  
 end
